@@ -39,18 +39,19 @@ get_db_discussions <- function(repo = "katilingban/ennet_db",
 
   ## Return message if try-error
   if (class(x) == "try-error") {
-    stop(
+    x <- NULL
+    message(
       paste(
-        strwrap(x = "Repository and/or branch cannot be found. Please check your
-                     specifications and try again.",
+        strwrap(x = "Repository, branch, and/or file cannot be found. Please
+                     check your specifications and try again. Returning NULL.",
                 width = 80),
         collapse = "\n"
       )
     )
+  } else {
+    ## Convert to tibble
+    x <- tibble::tibble(x)
   }
-
-  ## Convert to tibble
-  x <- tibble::tibble(x)
 
   ## Return discussions
   return(x)
@@ -88,10 +89,11 @@ get_db_topics <- function(repo = "katilingban/ennet_db",
 
   ## Return message if try-error
   if (class(x) == "try-error") {
-    stop(
+    x <- NULL
+    message(
       paste(
-        strwrap(x = "Repository and/or branch cannot be found. Please check your
-                     specifications and try again.",
+        strwrap(x = "Repository, branch, and/or file cannot be found. Please
+                     check your specifications and try again. Returning NULL.",
                 width = 80),
         collapse = "\n"
       )
@@ -183,36 +185,64 @@ create_db_topics_daily <- function(repo = "katilingban/ennet_db",
 
   ## Detect filenames of hourly datasets in ennet_db required based on .date
   fn <- fn[fn %>% stringr::str_detect(pattern = paste(.date, collapse = "|"))]
-  fn <- paste("https://raw.githubusercontent.com/",
-              repo, "/", branch, "/data/", fn, sep = "")
 
-  x <- lapply(X = fn,
-              FUN = function(fn) {
-                ## Create timestamp
-                ts <- fn %>%
-                  stringr::str_remove_all(pattern = "ennet_topics_|.csv") %>%
-                  lubridate::as_datetime() %>%
-                  stringr::str_replace_all(pattern = " ", replacement = "_")
+  if (length(fn) > 0) {
+    fn <- paste("https://raw.githubusercontent.com/",
+                repo, "/", branch, "/data/", fn, sep = "")
 
-                ## Read first file in list
-                x <- read.csv(file = fn)
+    x <- lapply(
+      X = fn,
+      FUN = function(fn) {
+        ## Create timestamp
+        ts <- fn %>%
+          stringr::str_remove_all(pattern = "ennet_topics_|.csv") %>%
+          lubridate::as_datetime() %>%
+          stringr::str_replace_all(pattern = " ", replacement = "_")
 
-                ## re-order columns and rename
-                x <- x[c(1, 2, 4, 5, 6, 3, 7)]
-                names(x)[6:7] <- paste(names(x)[6:7], ts, sep = "_")
+        ## Read first file in list
+        x <- try(read.csv(file = fn), silent = TRUE)
 
-                return(x)
-              }
-       )
+          if (class(x) == "try-error") {
+            x <- NULL
+            message(
+              paste(
+                strwrap(x = "Repository, branch, and/or file cannot be found.
+                             Please check your specifications and try again.
+                             Returning NULL.",
+                        width = 80),
+                collapse = "\n"
+              )
+            )
+          } else {
+            ## re-order columns and rename
+            x <- x[c(1, 2, 4, 5, 6, 3, 7)]
+            names(x)[6:7] <- paste(names(x)[6:7], ts, sep = "_")
+          }
 
-  x <- Reduce(f = merge, x = x)
+        return(x)
+      }
+    )
 
-  ## Rename fields
-  names(x) <- names(x) %>%
-    stringr::str_replace_all(pattern = "\\-|\\:", replacement = "")
+    x <- Reduce(f = merge, x = x)
 
-  ## Convert to tibble
-  x <- tibble::tibble(x)
+    ## Rename fields
+    names(x) <- names(x) %>%
+      stringr::str_replace_all(pattern = "\\-|\\:", replacement = "")
+
+    ## Convert to tibble
+    x <- tibble::tibble(x)
+  } else {
+    x <- NULL
+    message(
+      paste(
+        strwrap(x = "None of the filenames provided are from the date specified.
+                     Verify filenames and/or date specified and try again.
+                     Returning NULL.",
+                width = 80),
+        collapse = "\n"
+      )
+    )
+  }
 
   ## Return x
   return(x)
@@ -238,7 +268,7 @@ create_db_topics_daily <- function(repo = "katilingban/ennet_db",
 #' @author Ernest Guevarra
 #'
 #' @examples
-#' create_db_topics_monthly(.date = "2021-01-03")
+#' create_db_topics_monthly(.date = "2021-01-01")
 #'
 #' @export
 #'
@@ -295,7 +325,12 @@ create_db_topics_monthly <- function(repo = "katilingban/ennet_db",
               data_dates, ".csv", sep = "")
 
   ## Read each dataset
-  x <- lapply(X = fn, FUN = read.csv)
+  x <- lapply(
+    X = fn,
+    FUN = function(fn) {
+      try(read.csv(fn))
+    }
+  )
 
   ## Merge items on the list
   x <- Reduce(f = merge, x = x)

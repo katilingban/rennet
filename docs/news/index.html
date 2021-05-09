@@ -79,7 +79,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ennet</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.2</span>
       </span>
     </div>
 
@@ -140,16 +140,22 @@
       <small>Source: <a href='https://github.com/katilingban/ennet/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
+    <div id="ennet-022" class="section level1">
+<h1 class="page-header" data-toc-text="0.2.2">
+<a href="#ennet-022" class="anchor"></a>ennet 0.2.2<small> Unreleased </small>
+</h1>
+<p>This is the fourth CRAN release of <code>ennet</code>. This is a patch release to fix a CRAN check issue where internet resources sometimes become unavailable and therefore causes errors. CRAN policy specifies that such scenarios should “exit gracefully” notifying user that resource is unavailable rather than throw a check warning or error. This has been implemented in this patch version.</p>
+</div>
     <div id="ennet-021" class="section level1">
 <h1 class="page-header" data-toc-text="0.2.1">
-<a href="#ennet-021" class="anchor"></a>ennet 0.2.1<small> Unreleased </small>
+<a href="#ennet-021" class="anchor"></a>ennet 0.2.1<small> 2021-02-03 </small>
 </h1>
-<p>This is the third CRAN release of <code>ennet</code>. This is a patch release to fix a test that uses an input that used to throw an error but now does not. This test has now beeen fixed.</p>
+<p>This is the third CRAN release of <code>ennet</code>. This is a patch release to fix a test that uses an input that used to throw an error but now does not. This test has now been fixed.</p>
 <div id="bug-fixes" class="section level3">
 <h3 class="hasAnchor">
 <a href="#bug-fixes" class="anchor"></a>Bug fixes</h3>
 <ul>
-<li>Fixed test for <code>create_db_topics_monthly</code> that used an input for a date of 2021-02-01 which earlier would provide an error but now that it is already February, this input doesn’t throw an error anymore. This was changed to 2020-01-01 instead.</li>
+<li>Fixed test for <code>create_db_topics_monthly</code> that used an input for a date of 2021-02-01 which earlier would provide an error but now that it is already February, this input doesn’t throw an error. This was changed to 2020-01-01 instead.</li>
 </ul>
 </div>
 </div>

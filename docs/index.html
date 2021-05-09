@@ -46,7 +46,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">ennet</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.2</span>
       </span>
     </div>
 
@@ -126,8 +126,9 @@
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"ennet"</span><span class="op">)</span></code></pre></div>
 <p>You can install the development version from <a href="https://github.com/">GitHub</a> with:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="cf">if</span>(<span class="op">!</span><span class="kw">require</span>(remotes) <span class="kw">install.packages</span>(<span class="st">"remotes"</span>))</span>
-<span id="cb2-2"><a href="#cb2-2"></a>remotes<span class="op">::</span><span class="kw">install_github</span>(<span class="st">"katilingban/ennet"</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw">if</span><span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html">require</a></span><span class="op">(</span><span class="va"><a href="https://remotes.r-lib.org">remotes</a></span><span class="op">)</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"remotes"</span><span class="op">)</span>
+<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"katilingban/ennet"</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="usage" class="section level2">
 <h2 class="hasAnchor">
@@ -142,9 +143,7 @@
 <p>The <a href="https://www.en-net.org"><strong>en-net</strong> online forum</a> website has a very clear and clean structure. The opening page is a list of <strong>thematic areas</strong> which are linked to each of their respective webpages. In each of these <strong>thematic area</strong> webpages is another list, this time a list of <strong>topics</strong> raised within the <strong>thematic area</strong>. These <strong>topics</strong> are the text that an online user provides as the title for the question she/he is going to ask. Each of the <strong>topics</strong> are then again linked to their respective webpages that show the actual full question raised and the ensuing responses and <strong>discussion</strong> stemming from that question.</p>
 <p><br></p>
 <p align="center">
-</p>
-<p><img src="reference/figures/ennet_structure.png" width="100%" style="display: block; margin: auto;"></p>
-
+<img src="reference/figures/ennet_structure.png" width="100%" style="display: block; margin: auto;"></p>
 <p><br></p>
 <p>Based on this structure, the following functions are available from the <code>ennet</code> package for extracting text data:</p>
 <ul>
@@ -279,6 +278,7 @@
 <li><a href="https://github.com/katilingban/ennet/actions"><img src="https://github.com/katilingban/ennet/workflows/test-coverage/badge.svg" alt="R build status"></a></li>
 <li><a href="https://codecov.io/gh/katilingban/ennet?branch=master"><img src="https://codecov.io/gh/katilingban/ennet/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
 <li><a href="https://www.codefactor.io/repository/github/katilingban/ennet"><img src="https://www.codefactor.io/repository/github/katilingban/ennet/badge" alt="CodeFactor"></a></li>
+<li><a href="https://zenodo.org/badge/latestdoi/278736971"><img src="https://zenodo.org/badge/278736971.svg" alt="DOI"></a></li>
 </ul>
 </div>
 </div>

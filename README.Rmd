@@ -29,6 +29,7 @@ knitr::opts_chunk$set(
 [![R build status](https://github.com/katilingban/ennet/workflows/test-coverage/badge.svg)](https://github.com/katilingban/ennet/actions)
 [![Codecov test coverage](https://codecov.io/gh/katilingban/ennet/branch/master/graph/badge.svg)](https://codecov.io/gh/katilingban/ennet?branch=master)
 [![CodeFactor](https://www.codefactor.io/repository/github/katilingban/ennet/badge)](https://www.codefactor.io/repository/github/katilingban/ennet)
+[![DOI](https://zenodo.org/badge/278736971.svg)](https://zenodo.org/badge/latestdoi/278736971)
 <!-- badges: end -->
 
 [**en-net**](https://www.en-net.org) is the go to online forum for field practitioners requiring prompt technical advice for operational challenges for which answers are not readily accessible in current guidelines. The questions and the corresponding answers raised within [**en-net** online forum](https://www.en-net.org) can provide insight into what the key topics of discussion are within the nutrition sector. This package provides utility functions for the extraction, processing and analysis of text data from the online forum.
@@ -54,7 +55,7 @@ install.packages("ennet")
 You can install the development version from [GitHub](https://github.com/) with:
 
 ```{r install_github, echo = TRUE, eval = FALSE}
-if(!require(remotes) install.packages("remotes"))
+if(!require(remotes)) install.packages("remotes")
 remotes::install_github("katilingban/ennet")
 ```
 

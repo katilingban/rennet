@@ -80,7 +80,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ennet</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.2</span>
       </span>
     </div>
 
@@ -171,19 +171,19 @@ ennet_db</p>
 <span class='va'>x</span> <span class='op'>&lt;-</span> <span class='va'>ennet_hourlies</span><span class='op'>[</span><span class='va'>ennet_hourlies</span><span class='op'>$</span><span class='va'>Theme</span> <span class='op'>==</span> <span class='va'>themes</span><span class='op'>[</span><span class='fl'>3</span><span class='op'>]</span>, <span class='op'>]</span>
 <span class='fu'>create_db_topics_dailies</span><span class='op'>(</span>hourlies <span class='op'>=</span> <span class='va'>x</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 840 x 9</span><span>
-#&gt;    Theme Topic Author Posted Link  Interaction Extraction              n
-#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #949494;font-style: italic;'>&lt;dttm&gt;</span><span>              </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>
-#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> COVI… Is t… Umbre… 2020-… http… Views       2020-12-27 </span><span style='color: #949494;'>23:22:45</span><span>   174
-#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> COVI… Is t… Umbre… 2020-… http… Views       2020-12-28 </span><span style='color: #949494;'>23:22:46</span><span>   175
-#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> COVI… Is t… Umbre… 2020-… http… Views       2020-12-29 </span><span style='color: #949494;'>23:26:27</span><span>   177
-#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> COVI… Is t… Umbre… 2020-… http… Views       2020-12-30 </span><span style='color: #949494;'>23:24:46</span><span>   186
-#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> COVI… Is t… Umbre… 2020-… http… Views       2020-12-31 </span><span style='color: #949494;'>23:24:35</span><span>   191
-#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> COVI… Is t… Umbre… 2020-… http… Replies     2020-12-27 </span><span style='color: #949494;'>23:22:45</span><span>     0
-#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> COVI… Is t… Umbre… 2020-… http… Replies     2020-12-28 </span><span style='color: #949494;'>23:22:46</span><span>     0
-#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> COVI… Is t… Umbre… 2020-… http… Replies     2020-12-29 </span><span style='color: #949494;'>23:26:27</span><span>     0
-#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> COVI… Is t… Umbre… 2020-… http… Replies     2020-12-30 </span><span style='color: #949494;'>23:24:46</span><span>     0
-#&gt; </span><span style='color: #BCBCBC;'>10</span><span> COVI… Is t… Umbre… 2020-… http… Replies     2020-12-31 </span><span style='color: #949494;'>23:24:35</span><span>     0
-#&gt; </span><span style='color: #949494;'># … with 830 more rows, and 1 more variable: `Extraction Date` </span><span style='color: #949494;font-style: italic;'>&lt;date&gt;</span><span></div><div class='input'>
+#&gt;    Theme   Topic     Author Posted Link    Interaction Extraction              n
+#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>     </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #949494;font-style: italic;'>&lt;dttm&gt;</span><span>              </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>
+#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> COVID-… Is the O… Umbre… 2020-… https:… Views       2020-12-27 </span><span style='color: #949494;'>23:22:45</span><span>   174
+#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> COVID-… Is the O… Umbre… 2020-… https:… Views       2020-12-28 </span><span style='color: #949494;'>23:22:46</span><span>   175
+#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> COVID-… Is the O… Umbre… 2020-… https:… Views       2020-12-29 </span><span style='color: #949494;'>23:26:27</span><span>   177
+#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> COVID-… Is the O… Umbre… 2020-… https:… Views       2020-12-30 </span><span style='color: #949494;'>23:24:46</span><span>   186
+#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> COVID-… Is the O… Umbre… 2020-… https:… Views       2020-12-31 </span><span style='color: #949494;'>23:24:35</span><span>   191
+#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> COVID-… Is the O… Umbre… 2020-… https:… Replies     2020-12-27 </span><span style='color: #949494;'>23:22:45</span><span>     0
+#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> COVID-… Is the O… Umbre… 2020-… https:… Replies     2020-12-28 </span><span style='color: #949494;'>23:22:46</span><span>     0
+#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> COVID-… Is the O… Umbre… 2020-… https:… Replies     2020-12-29 </span><span style='color: #949494;'>23:26:27</span><span>     0
+#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> COVID-… Is the O… Umbre… 2020-… https:… Replies     2020-12-30 </span><span style='color: #949494;'>23:24:46</span><span>     0
+#&gt; </span><span style='color: #BCBCBC;'>10</span><span> COVID-… Is the O… Umbre… 2020-… https:… Replies     2020-12-31 </span><span style='color: #949494;'>23:24:35</span><span>     0
+#&gt; </span><span style='color: #949494;'># … with 830 more rows, and 1 more variable: Extraction Date &lt;date&gt;</span><span></div><div class='input'>
 </div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

@@ -29,7 +29,7 @@ ennet_db
 Create monthly topics dataset for the ennet_db
 }
 \examples{
-create_db_topics_monthly(.date = "2021-01-03")
+create_db_topics_monthly(.date = "2021-01-01")
 
 }
 \author{

@@ -21,6 +21,7 @@ status](https://github.com/katilingban/ennet/workflows/test-coverage/badge.svg)]
 [![Codecov test
 coverage](https://codecov.io/gh/katilingban/ennet/branch/master/graph/badge.svg)](https://codecov.io/gh/katilingban/ennet?branch=master)
 [![CodeFactor](https://www.codefactor.io/repository/github/katilingban/ennet/badge)](https://www.codefactor.io/repository/github/katilingban/ennet)
+[![DOI](https://zenodo.org/badge/278736971.svg)](https://zenodo.org/badge/latestdoi/278736971)
 <!-- badges: end -->
 
 [**en-net**](https://www.en-net.org) is the go to online forum for field
@@ -61,7 +62,7 @@ You can install the development version from
 [GitHub](https://github.com/) with:
 
 ``` r
-if(!require(remotes) install.packages("remotes"))
+if(!require(remotes)) install.packages("remotes")
 remotes::install_github("katilingban/ennet")
 ```
 
@@ -93,9 +94,7 @@ ensuing responses and **discussion** stemming from that question.
 <br/>
 
 <p align="center">
-
 <img src="man/figures/ennet_structure.png" width="100%" style="display: block; margin: auto;" />
-
 </p>
 
 <br/>
@@ -103,13 +102,13 @@ ensuing responses and **discussion** stemming from that question.
 Based on this structure, the following functions are available from the
 `ennet` package for extracting text data:
 
-  - `get_themes` - function to get a list of thematic areas in the
+-   `get_themes` - function to get a list of thematic areas in the
     forum;
 
-  - `get_theme_topics` and `get_themes_topics` - functions to get list
+-   `get_theme_topics` and `get_themes_topics` - functions to get list
     of topics for a specific thematic area or thematic areas; and,
 
-  - `get_topic_discussions` and `get_topics_discussions` - functions to
+-   `get_topic_discussions` and `get_topics_discussions` - functions to
     get list of discussions for a specific topic or topics,
 
 The general data extraction workflow codified by the `ennet` package is
@@ -151,16 +150,16 @@ text data available from the [**en-net** online
 forum](https://www.en-net.org). Currently, there are four sets of
 analytic functions available from `ennet`:
 
-  - `count_topics_time` functions - set of functions to count the number
+-   `count_topics_time` functions - set of functions to count the number
     of topics or questions by day, week, month or year;
 
-  - `count_topics_theme` functions - set of functions to count the
+-   `count_topics_theme` functions - set of functions to count the
     number of topics or questions by theme;
 
-  - `count_topics_author` functions - set of functions to count the
+-   `count_topics_author` functions - set of functions to count the
     number of topics or questions by author; and,
 
-  - `arrange` functions - set of functions to arrange topics by number
+-   `arrange` functions - set of functions to arrange topics by number
     of views or by number of replies.
 
 For a more detailed discussion of the analytics functions available from
